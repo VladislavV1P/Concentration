@@ -11,17 +11,16 @@ class ViewController: UIViewController {
 
     lazy var game = ConcentrationGame(numberOfPairOfCards: (buttonCollection.count + 1) / 2)
     
+    
     var touches = 0 {
         didSet {
             touchLabel.text = "Touches: \(touches)"
         }
     }
      
-    
     var emojiCollection = ["🐊","🐞","🐥","🐋","🐜","🦀","🦆","🐅","🐙","🪱","🐡","🦧","🦩","🦥","🦔","🐖"]
     
     var emojiDictionary = [Int: String]()
-    
     
     func emojiIdentifier(for card: Card ) -> String {
         if emojiDictionary[card.identifier] == nil {
@@ -50,7 +49,6 @@ class ViewController: UIViewController {
     @IBAction func buttonAction(_ sender: UIButton) {
         touches += 1
         if let buttonIndex = buttonCollection.firstIndex(of: sender) {
-//            flipButton(emoji: emojiCollection[buttonIndex], button:  sender)
             game.chooseCard(at: buttonIndex)
             updateViewFromModel()
         }
