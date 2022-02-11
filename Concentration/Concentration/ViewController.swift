@@ -20,6 +20,7 @@ class ViewController: UIViewController {
      
     var emojiCollection = ["🐊","🐞","🐥","🐋","🐜","🦀","🦆","🐅","🐙","🪱","🐡","🦧","🦩","🦥","🦔","🐖"]
     
+    
     var emojiDictionary = [Int: String]()
     
     func emojiIdentifier(for card: Card ) -> String {
